@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .chat-container {
+            width: 50%;
+            max-width: 600px;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background-color: #4CAF50;
+            color: white;
+            align-self: flex-end;
+        }
+        .bot-message {
+            background-color: #ddd;
+            align-self: flex-start;
+        }
+        .input-container {
+            margin-top: 10px;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        input[type="file"], input[type="text"] {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #status {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Chat with Your PDF</h2>
+
+    <!-- File Upload Section -->
+    <input type="file" id="fileInput" accept=".pdf">
+    <button onclick="uploadFile()">Upload</button>
+
+    <p id="status"></p>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chatContainer"></div>
+
+    <!-- Chat Input -->
+    <div class="input-container">
+        <input type="text" id="messageInput" placeholder="Type a message...">
+        <button id="sendBtn" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        let pdfId = null;
+
+        async function uploadFile() {
+            let fileInput = document.getElementById("fileInput");
+            let statusText = document.getElementById("status");
+            let messageInput = document.getElementById("messageInput");
+            let sendBtn = document.getElementById("sendBtn");
+
+            if (!fileInput.files.length) {
+                alert("Please select a PDF file.");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            statusText.innerText = "Uploading file...";
+            sendBtn.disabled = true;
+            messageInput.disabled = true;
+
+            try {
+                let response = await fetch("http://127.0.0.1:8080/api/upload", {
+                    method: "POST",
+                    body: formData
+                });
+
+                let result = await response.json();
+                if (response.ok) {
+                    pdfId = result.pdf_id;
+                    statusText.innerText = "File uploaded! You can now chat.";
+                    messageInput.disabled = false;
+                    sendBtn.disabled = false;
+                } else {
+                    statusText.innerText = "Upload failed: " + result.error;
+                }
+            } catch (error) {
+                statusText.innerText = "Error uploading file.";
+            }
+        }
+
+        async function sendMessage() {
+            // console.log("i have reached here");
+            let messageInput = document.getElementById("messageInput");
+            let sendBtn = document.getElementById("sendBtn");
+            let messageText = messageInput.value.trim();
+            // console.log(messageText);
+
+            if (!messageText || !pdfId) return;
+
+            // Display user message in chat
+            displayMessage(messageText, "user-message");
+
+            // Clear input field and disable send button while waiting for response
+            messageInput.value = "";
+            sendBtn.disabled = true;
+
+            // API call to /api/chat
+            try {
+                console.log("i have reached here");
+                let response = await fetch("http://127.0.0.1:8080/api/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        pdf_id: pdfId,
+                        question: messageText
+                    })
+                });
+
+                let result = await response.json();
+                if (response.ok) {
+                    displayMessage(result.answer, "bot-message");
+                } else {
+                    displayMessage("Error: " + result.error, "bot-message");
+                }
+            } catch (error) {
+                displayMessage("Error connecting to chat API.", "bot-message");
+            } finally {
+                sendBtn.disabled = false;
+            }
+        }
+
+        function displayMessage(text, className) {
+            let chatContainer = document.getElementById("chatContainer");
+            let messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", className);
+            messageDiv.innerText = text;
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+
+</body>
+</html>

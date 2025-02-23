@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.scroll-text {
+  opacity: 0.1; /* Initial opacity */
+  transition: opacity 1s ease; /* Smooth transition */
+  font-size: 2rem;
+  color: white; /* Text color */
+  text-align: center;
+}
+
+.scroll-text.in-view {
+  opacity: 1; /* Full opacity when in view */
+}

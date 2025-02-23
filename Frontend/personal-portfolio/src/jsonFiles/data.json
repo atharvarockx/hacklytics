@@ -1,0 +1,132 @@
+{
+    "charts": {
+        "barChart": {
+            "data": [
+                {
+                    "amount": 10265,
+                    "name": "Rent"
+                },
+                {
+                    "amount": 870,
+                    "name": "Groceries"
+                },
+                {
+                    "amount": 800,
+                    "name": "Weekend Getaway"
+                },
+                {
+                    "amount": 500,
+                    "name": "Investments"
+                },
+                {
+                    "amount": 245,
+                    "name": "Car Insurance"
+                }
+            ]
+        },
+        "lineChart": {
+            "data": [
+                {
+                    "Expenditure": 1950,
+                    "Income": 2500,
+                    "name": "January"
+                },
+                {
+                    "Expenditure": 1900,
+                    "Income": 2500,
+                    "name": "February"
+                },
+                {
+                    "Expenditure": 2050,
+                    "Income": 2500,
+                    "name": "March"
+                },
+                {
+                    "Expenditure": 1250,
+                    "Income": 2500,
+                    "name": "April"
+                },
+                {
+                    "Expenditure": 2345,
+                    "Income": 2500,
+                    "name": "May"
+                },
+                {
+                    "Expenditure": 4045,
+                    "Income": 2500,
+                    "name": "June"
+                },
+                {
+                    "Expenditure": 0,
+                    "Income": 0,
+                    "name": "July"
+                },
+                {
+                    "Expenditure": 0,
+                    "Income": 0,
+                    "name": "August"
+                },
+                {
+                    "Expenditure": 0,
+                    "Income": 0,
+                    "name": "September"
+                },
+                {
+                    "Expenditure": 0,
+                    "Income": 0,
+                    "name": "October"
+                },
+                {
+                    "Expenditure": 0,
+                    "Income": 0,
+                    "name": "November"
+                },
+                {
+                    "Expenditure": 0,
+                    "Income": 0,
+                    "name": "December"
+                }
+            ]
+        },
+        "pieChart": {
+            "data": [
+                {
+                    "amount": 10265,
+                    "name": "Rent"
+                },
+                {
+                    "amount": 870,
+                    "name": "Groceries"
+                },
+                {
+                    "amount": 130,
+                    "name": "Entertainment"
+                },
+                {
+                    "amount": 245,
+                    "name": "Utilities"
+                },
+                {
+                    "amount": 800,
+                    "name": "Travel"
+                },
+                {
+                    "amount": 150,
+                    "name": "Healthcare"
+                },
+                {
+                    "amount": 350,
+                    "name": "Shopping"
+                },
+                {
+                    "amount": 500,
+                    "name": "Investments"
+                },
+                {
+                    "amount": 50,
+                    "name": "Gym Membership"
+                }
+            ]
+        }
+    }
+}
