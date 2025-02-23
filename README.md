@@ -1,4 +1,4 @@
-# Fin Buzz 🐝
+# FinBuzz : AI Driven Personal Finance Assistant 🐝
 
 Fin Buzz is a hackathon project for Hackyltics 2025 where we transform unstructured bank statement data into actionable financial insights through an interactive, real-time dashboard. Our solution harnesses advanced GenAI tools to convert raw financial data into clear, data-driven visualizations and recommendations.
 
@@ -6,7 +6,7 @@ Fin Buzz is a hackathon project for Hackyltics 2025 where we transform unstructu
 
 ## Overview
 
-Fin Buzz takes your complex bank statements and makes them easy to understand. By structuring unstructured data, our platform allows users to quickly analyze expenses, detect anomalies, and uncover trends—all in a user-friendly interface.
+FinBuzz takes your complex bank statements and makes them easy to understand. By structuring unstructured data, our platform allows users to quickly analyze expenses, detect anomalies, and uncover trends—all in a user-friendly interface.
 
 ---
 
@@ -40,7 +40,7 @@ Fin Buzz takes your complex bank statements and makes them easy to understand. B
 
 ---
 
-## What's Next for Fin Buzz AI 🐝
+## What's Next for FinBuzz 🐝
 
 - **Enhanced Predictive Analytics:** Integrate more advanced forecasting to anticipate future trends.
 - **Broader Data Integration:** Expand to support multiple financial accounts and data sources.
@@ -49,4 +49,4 @@ Fin Buzz takes your complex bank statements and makes them easy to understand. B
 
 ---
 
-MoneyMind AI is our innovative solution to demystify financial data and empower users to make smarter money decisions—all built during a hackathon with passion and cutting-edge technology. Enjoy exploring your financial insights like never before!
+FinBuzz is our innovative solution to demystify financial data and empower users to make smarter money decisions—all built during a hackathon with passion and cutting-edge technology. Enjoy exploring your financial insights like never before!
