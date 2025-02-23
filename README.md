@@ -1,4 +1,4 @@
-# Fin Buzz
+# Fin Buzz 🐝
 
 Fin Buzz is a hackathon project for Hackyltics 2025 where we transform unstructured bank statement data into actionable financial insights through an interactive, real-time dashboard. Our solution harnesses advanced GenAI tools to convert raw financial data into clear, data-driven visualizations and recommendations.
 
@@ -40,7 +40,7 @@ Fin Buzz takes your complex bank statements and makes them easy to understand. B
 
 ---
 
-## What's Next for MoneyMind AI
+## What's Next for Fin Buzz AI 🐝
 
 - **Enhanced Predictive Analytics:** Integrate more advanced forecasting to anticipate future trends.
 - **Broader Data Integration:** Expand to support multiple financial accounts and data sources.
