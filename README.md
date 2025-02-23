@@ -35,7 +35,7 @@ FinBuzz takes your complex bank statements and makes them easy to understand. By
 ## Project Highlights
 
 - **GenAI Integration:** We selected GenAI tools (GPT-4o, Llama Index, RAG) to quickly transform messy bank statements into structured, queryable data—essential for delivering real-time insights.
-- **Rapid Development:** Developed under hackathon constraints, MoneyMind AI demonstrates how advanced AI and modern web technologies can come together to solve real-world financial challenges.
+- **Rapid Development:** Developed under hackathon constraints, FinBuzz demonstrates how advanced AI and modern web technologies can come together to solve real-world financial challenges.
 - **User-Centric Design:** With an intuitive dashboard and guided experience, users are helped to make the most of the platform by highlighting potential use cases.
 
 ---
