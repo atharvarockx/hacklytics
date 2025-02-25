@@ -50,3 +50,5 @@ FinBuzz takes your complex bank statements and makes them easy to understand. By
 ---
 
 FinBuzz is our innovative solution to demystify financial data and empower users to make smarter money decisions—all built during a hackathon with passion and cutting-edge technology. Enjoy exploring your financial insights like never before!
+
+---
